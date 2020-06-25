@@ -1,0 +1,49 @@
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-dw8dz[0m
+{"level":"info","ts":1593092792.5304987,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593092792.5309832,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-pnn6s[0m
+{"level":"info","ts":1593092793.5048494,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1593092793.5062273,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ablazleon-mynode-jx-master-rele-ldp2b-lzbjs[0m
+{"level":"info","ts":1593092800.6278422,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593092801.743311,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/mynode-**.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:852af94b36c912140f178288c070611366e4649d
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.935s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mablazleon-mynode-jx-master-rele-ldp2b-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0625 13:46:47.148944      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+E0625 13:46:47.156942      10 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0625 13:46:47.159743      10 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "https://hub.docker.com//envjenkinsk8udacitycapstone/mynode-**:0.0.2": creating push check transport for https: failed: Get "https://https/v2/": dial tcp: lookup https on 10.15.240.10:53: no such host
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
