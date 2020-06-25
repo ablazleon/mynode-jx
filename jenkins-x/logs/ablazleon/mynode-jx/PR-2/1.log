@@ -1,0 +1,58 @@
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-wkp76[0m
+{"level":"info","ts":1593091853.2664623,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593091853.2669322,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-4gf5c[0m
+{"level":"info","ts":1593091854.592813,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1593091854.5939686,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-ablazleon-mynode-jx-pr-2-pr-bui-ch4b2-cj44z[0m
+{"level":"info","ts":1593091860.6734338,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593091861.7891967,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/mynode-**.git @ master in path /workspace/source"}
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:42dd9e6036d48b667de054e600b154c3a06f8abe,2:5ffdbf35b6cc53fa93608c1434411189859ea3ac
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 5ffdbf35b6cc53fa93608c1434411189859ea3ac: 42dd9e6036d48b667de054e600b154c3a06f8abe:
+DEBUG: ran git fetch --unshallow origin 5ffdbf35b6cc53fa93608c1434411189859ea3ac: 42dd9e6036d48b667de054e600b154c3a06f8abe: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 42dd9e6036d48b667de054e600b154c3a06f8abe
+DEBUG: ran git reset --hard 42dd9e6036d48b667de054e600b154c3a06f8abe in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 5ffdbf35b6cc53fa93608c1434411189859ea3ac
+DEBUG: ran git merge 5ffdbf35b6cc53fa93608c1434411189859ea3ac in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 42dd9e6036d48b667de054e600b154c3a06f8abe..HEAD
+Merged SHA 5ffdbf35b6cc53fa93608c1434411189859ea3ac with commit message 'Update server.js' into base branch master
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.36s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mablazleon-mynode-jx-pr-2-pr-bui-ch4b2-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0625 13:31:06.542348      10 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+E0625 13:31:06.549834      10 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0625 13:31:06.551871      10 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+error checking push permissions -- make sure you entered the correct tag name, and that you are authenticated correctly, and try again: checking push permission for "https://hub.docker.com//envjenkinsk8udacitycapstone/mynode-**:0.0.0-SNAPSHOT-PR-2-1": creating push check transport for https: failed: Get "https://https/v2/": dial tcp: lookup https on 10.15.240.10:53: no such host
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-build'. The execution of the pipeline has stopped.[0m
